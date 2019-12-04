@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>1996 - DengSir</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>致我最爱的猪猪女</title>
+    <link rel="Bookmark" type="image/x-icon" href="favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">-->
     <!--<meta itemprop="image" content="./images/fenxiang.png" />-->
+    <!--    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"-->
+    <!--          name="viewport">-->
     <style>
         html {
             height: 100%;
         }
+
         body {
-            font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+            /*font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;*/
+            font-family: Gill Sans Extrabold, sans-serif;
             background: #79a8ae;
             color: #CFEBE4;
             font-size: 18px;
@@ -19,9 +27,11 @@
             letter-spacing: 1.2px;
             margin: 0;
         }
+
         a {
             color: #ebf7f4;
         }
+
         .body--ready {
             background: -webkit-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
             background: -moz-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
@@ -29,18 +39,21 @@
             background: -ms-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
             background: linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
         }
+
         .text {
             position: fixed;
             bottom: 100px;
             text-align: center;
             width: 100%;
         }
+
         .canvas {
             margin: 0 auto;
             display: block;
         }
-        img#logo {
-            width: 128px;
+
+        .img#logo {
+            width: 300px;
             background-size: cover;
             border-radius: 200px;
             box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
@@ -51,6 +64,7 @@
             margin-bottom: 20px;
             transition: all 1.0s;
         }
+
         #logo:hover {
             box-shadow: 0 0 10px #fff;
             -webkit-box-shadow: 0 0 19px #fff;
@@ -61,6 +75,16 @@
             -o-transform: rotate(360deg); /* Opera */
             filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
         }
+
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {
+            .img#logo {
+                width: 128px;
+            }
+        }
+
+
         .cs {
             width: 100%;
             height: 100%;
@@ -68,6 +92,7 @@
             position: absolute;
             text-align: center;
         }
+
         .text {
             position: fixed;
             bottom: 80px;
@@ -75,6 +100,7 @@
             width: 100%;
             font-weight: bold;
         }
+
         .text-right {
             position: fixed;
             bottom: 50px;
@@ -84,23 +110,41 @@
         }
     </style>
 
+
 </head>
 
 <body>
-<!--更改为你女朋友的头像-->
+<!--头像-->
 <div class="cs">
-    <img src="http://image.sunchen.cc/YY.JPG" id="logo">
+    <img src="http://image.sunchen.cc/YY.JPG" id="logo" class="img">
 </div>
-<canvas class="canvas" width="1820" height="905"></canvas>
-<p class="text" style="color: #ed3073;">
-    We fell in love
+
+<canvas class="canvas" width="1080" height="1920"></canvas>
+
+<p id="text_note" class="text" style="color: #ed3073;font-size: 20px">
+    <!--    永远爱护你 ❤️-->
     <br/>
-    <span id="span_dt_dt"></span>
+    <!--    <span id="span_dt_dt"></span>-->
 </p>
+
+<script>
+    // setTimeout("changeState()", 3000);
+    //
+    // function changeState() {
+    //     let content = document.getElementById('text_note');
+    //
+    //     content.innerHTML = "<div style='color:red'>我是三秒后显示的内容！</div> " +
+    //         "<br>" + " <span>1996-12-06</span>" + "<br>" + "<span>1996-12-06</span>";
+    // }
+</script>
+
+<!--<iframe style="display: none" frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52-->
+<!--        src="//music.163.com/outchain/player?type=2&id=443716110&auto=1&height=32"></iframe>-->
+
 <script language="javascript">
     function show_date_time() {
         window.setTimeout("show_date_time()", 1000);
-        BirthDay = new Date("2/20/2018 00:00:00");//这个日期是可以修改的
+        BirthDay = new Date("12/06/2019 00:00:00");//这个日期是可以修改的
         today = new Date();
         timeold = (today.getTime() - BirthDay.getTime());
         sectimeold = timeold / 1000
@@ -113,17 +157,20 @@
         e_minsold = (e_hrsold - hrsold) * 60;
         minsold = Math.floor((e_hrsold - hrsold) * 60);
         seconds = Math.floor((e_minsold - minsold) * 60);
-        span_dt_dt.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+        // span_dt_dt.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
     }
+
     show_date_time();
 </script>
+
 <script>
     var S = {
         init: function () {
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
-            //想说的话
-            S.UI.simulate("yy|I'm|sc|Nice|to|Meet|You|#countdown 3|#time");
+            //文字
+            // S.UI.simulate("越越|今天是|一个|特别的日子|12.06|猪猪祝你|生日快乐呀|#countdown 3|#time");
+            S.UI.simulate("越宝宝|今天是|一个|特别的日子|12.06|你对我来说|是很重要的人|想要给你|一个惊喜|#countdown 3|生日快乐");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
@@ -182,19 +229,23 @@
             maxShapeSize = 30,
             sequence = [],
             cmd = '#';
+
         function formatTime(date) {
             var h = date.getHours(),
                 m = date.getMinutes(),
                 m = m < 10 ? '0' + m : m;
             return h + ':' + m;
         }
+
         function getValue(value) {
             return value && value.split(' ')[1];
         }
+
         function getAction(value) {
             value = value && value.split(' ')[0];
             return value && value[0] === cmd && value.substring(1);
         }
+
         function timedAction(fn, delay, max, reverse) {
             clearInterval(interval);
             currentAction = reverse ? max : 1;
@@ -209,6 +260,8 @@
                 }, delay);
             }
         }
+
+
         function performAction(value) {
             var action,
                 value,
@@ -227,12 +280,18 @@
                                 if (sequence.length === 0) {
                                     S.Shape.switchShape(S.ShapeBuilder.letter(''));
                                 } else {
+                                    let content = document.getElementById('text_note');
+
+                                    content.innerHTML = "<div style='color:red'>我是三秒后显示的内容！</div> " +
+                                        "<br>" + " <span>1996-12-06</span>" + "<br>" + "<span>1996-12-06</span>";
                                     performAction(sequence);
                                 }
                             } else {
                                 S.Shape.switchShape(S.ShapeBuilder.letter(index), true);
                             }
                         }, 1000, value, true);
+
+
                         break;
                     case 'rectangle':
                         value = value && value.split('x');
@@ -261,8 +320,9 @@
                     default:
                         S.Shape.switchShape(S.ShapeBuilder.letter(current[0] === cmd ? 'HacPai' : current));
                 }
-            }, 2000, sequence.length);
+            }, 3000, sequence.length);
         }
+
         return {
             simulate: function (action) {
                 performAction(action);
@@ -385,7 +445,8 @@
             shapeCanvas = document.createElement('canvas'),
             shapeContext = shapeCanvas.getContext('2d'),
             fontSize = 500,
-            fontFamily = 'Avenir, Helvetica Neue, Helvetica, Arial, sans-serif';
+            fontFamily = 'sans-serif';
+
         function fit() {
             shapeCanvas.width = Math.floor(window.innerWidth / gap) * gap;
             shapeCanvas.height = Math.floor(window.innerHeight / gap) * gap;
@@ -393,6 +454,7 @@
             shapeContext.textBaseline = 'middle';
             shapeContext.textAlign = 'center';
         }
+
         function processCanvas() {
             var pixels = shapeContext.getImageData(0, 0, shapeCanvas.width, shapeCanvas.height).data;
             dots = [],
@@ -423,16 +485,20 @@
             }
             return {dots: dots, w: w + fx, h: h + fy};
         }
+
         function setFontSize(s) {
             shapeContext.font = 'bold ' + s + 'px ' + fontFamily;
         }
+
         function isNumber(n) {
             return !isNaN(parseFloat(n)) && isFinite(n);
         }
+
         function init() {
             fit();
             window.addEventListener('resize', fit);
         }
+
         // Init
         init();
         return {
@@ -491,11 +557,13 @@
             height = 0,
             cx = 0,
             cy = 0;
+
         function compensate() {
             var a = S.Drawing.getArea();
             cx = a.w / 2 - width / 2;
             cy = a.h / 2 - height / 2;
         }
+
         return {
             shuffleIdle: function () {
                 var a = S.Drawing.getArea();
@@ -576,9 +644,11 @@
     }());
     S.init();
 </script>
-//音乐可改
-<audio autoplay="autoplay" loop="loop">
-    <source src="http://m10.music.126.net/20180509183512/5ae461e9a42675d782840bf139b05c60/ymusic/e492/ea7a/6a27/8799d19e52d9bbe3ae15febb03d7efdb.mp3" type="audio/mpeg">
-</audio>
+<!--//音乐-->
+<!--<audio autoplay="autoplay" loop="loop">-->
+<!--    <source src="http://image.sunchen.cc/群星-Happy birthday.mp3"-->
+<!--            type="audio/mpeg">-->
+<!--</audio>-->
 </body>
+
 </html>
