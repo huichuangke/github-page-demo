@@ -76,10 +76,10 @@
 
         .text {
             position: fixed;
-            bottom: 0px;
+            bottom: 100px;
             text-align: center;
             width: 100%;
-            font-weight: bold;
+            /*font-weight: bold;*/
             font-size: 40px
         }
 
@@ -101,28 +101,36 @@
 </head>
 
 <body>
-<!--头像-->
 <div class="cs">
     <img src="http://image.sunchen.cc/YY.JPG" id="logo" class="img">
 </div>
 
 <canvas class="canvas" width="1080" height="100%"></canvas>
 
+<audio id="bgMusic" controls="controls" style="display: none;  width: 200px;height: 40px">
+    <source src="http://image.sunchen.cc/群星-Happy birthday.mp3"
+            type="audio/mpeg">
+</audio>
+
 
 <p id="text_note" class="text">
-    <span id="span1" style="display: none" style="color: #0d0600">愿你此生尽兴，赤诚善良</span>
-    <br/>
-    <span id="span2" style="display: none" style="color: #0d0600">愿你所有快乐，无需假装</span>
-    <br/>
-    <span id="span3" style="display: none" style="color: #0d0600">愿你想要的都得到，得到的都美好</span>
-    <br/>
-    <span id="span4" style="display: none" style="color: #0d0600">那么这个惊喜是什么呢？</span>
 
-
+    <span id="span0" style="display: none">❤️❤️❤️️</span>
+    <br/>
+    <span id="span1" style="display: none;color: #0d0600">愿你此生尽兴，赤诚善良</span>
+    <br/>
+    <span id="span2" style="display: none;color: #0d0600">愿你所有快乐，无需假装</span>
+    <br/>
+    <span id="span3" style="display: none;color: #0d0600">愿你想要的都得到，得到的都美好</span>
+    <br/>
+    <span id="spanx" style="display: none;color: #0d0600;font-size: 60px">我会一直守护你</span>
+    <br/>
+    <br/>
+    <span id="span4" style="display: none;color: #ff1e25">所以惊喜到底是什么呢？</span>
+    <br/>
+    <span id="span5" style="display: none;color: #ff1e25">看看你的楼下吧O(∩_∩)O哈哈~ 越越</span>
 </p>
 
-<!--<iframe style="display: none" frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52-->
-<!--        src="//music.163.com/outchain/player?type=2&id=443716110&auto=1&height=32"></iframe>-->
 
 <script language="javascript">
     function show_date_time() {
@@ -151,8 +159,8 @@
         init: function () {
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
-            // S.UI.simulate("越宝宝|今天是|一个|特别的日子|12.06|对我来说|你是|特别|重要的人|这一生|想要给你|很多温暖|很多感动|但是现在|我要给你|一点惊喜|#countdown 5|生日快乐");
-            S.UI.simulate("#countdown 5|生日快乐");
+            S.UI.simulate("越宝宝|今天是|一个|特别的日子|12.06|对我来说|你是|特别|重要的人|这一生|想要给你|很多温暖|很多感动|但是现在|我要给你|一点惊喜|#countdown 5|生日快乐");
+            // S.UI.simulate("#countdown 2|生日快乐");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
@@ -265,21 +273,50 @@
 
                                     performAction(sequence);
 
+                                    let audio = document.getElementById("bgMusic");
+                                    audio.style.display = "block";
+                                    audio.play();
+
 
                                     $(document).ready(function () {
 
-                                        // $("#text_note").fadeIn();
-                                        // $("#div2").fadeIn("slow");
-                                        // $("#text_note").fadeIn(3000);
-                                        $("#span1").fadeIn(4000);
-                                        $("#span2").fadeIn(8000);
-                                        $("#span3").fadeIn(12000);
-                                        $("#span4").fadeIn(14000);
+                                        // $("#text_note").animate({bottom: '350px'});
+
+                                        setTimeout(function () {
+                                            $("#span0").fadeIn(2000);
+                                        }, 500);
+
+
+                                        setTimeout(function () {
+                                            $("#span1").fadeIn(2000);
+                                        }, 1000);
+
+                                        setTimeout(function () {
+                                            $("#span2").fadeIn(2000);
+
+                                        }, 3000);
+
+                                        setTimeout(function () {
+                                            $("#span3").fadeIn(2000);
+
+                                        }, 5000);
+                                        setTimeout(function () {
+                                            $("#spanx").fadeIn(3000);
+
+                                        }, 7500);
+
+                                        setTimeout(function () {
+                                            $("#span4").fadeIn(2000);
+
+                                        }, 10500);
+
+                                        setTimeout(function () {
+                                            $("#span5").fadeIn(2000);
+
+                                        }, 12000);
+
 
                                     });
-                                    //播放音乐
-                                    // let audio = new Audio("http://image.sunchen.cc/群星-Happy birthday.mp3");
-                                    // audio.play();
 
                                 }
                             } else {
@@ -640,11 +677,7 @@
     }());
     S.init();
 </script>
-<!--//音乐-->
-<!--<audio autoplay="autoplay" loop="loop">-->
-<!--    <source src="http://image.sunchen.cc/群星-Happy birthday.mp3"-->
-<!--            type="audio/mpeg">-->
-<!--</audio>-->
+
 </body>
 
 </html>
