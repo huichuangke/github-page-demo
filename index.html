@@ -40,12 +40,6 @@
             background: linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
         }
 
-        .text {
-            position: fixed;
-            bottom: 100px;
-            text-align: center;
-            width: 100%;
-        }
 
         .canvas {
             margin: 0 auto;
@@ -93,12 +87,11 @@
             text-align: center;
         }
 
-        /*.cs {*/
-        /*    width: 100%;*/
-        /*    height: 100%;*/
-        /*    margin: 0 auto;*/
-        /*    position: absolute;*/
+        /*.text {*/
+        /*    position: fixed;*/
+        /*    bottom: 100px;*/
         /*    text-align: center;*/
+        /*    width: 100%;*/
         /*}*/
 
         .text {
@@ -127,7 +120,7 @@
     <img src="http://image.sunchen.cc/YY.JPG" id="logo" class="img">
 </div>
 
-<canvas class="canvas" width="1080" height="1920"></canvas>
+<canvas class="canvas" width="1080" height="100%"></canvas>
 
 
 <!--&lt;!&ndash;文字&ndash;&gt;-->
@@ -137,9 +130,9 @@
 
 
 <p id="text_note" class="text" style="color: #ed3073;font-size: 20px">
-    <!--    永远爱护你 ❤️-->
+    永远爱护你 ❤️
     <br/>
-    <!--    <span id="span_dt_dt"></span>-->
+    <span>小越越</span>
 </p>
 
 <script>
@@ -185,7 +178,7 @@
             document.body.classList.add('body--ready');
             //文字
             // S.UI.simulate("越越|今天是|一个|特别的日子|12.06|猪猪祝你|生日快乐呀|#countdown 3|#time");
-            S.UI.simulate("越宝宝|今天是|一个|特别的日子|12.06|你对我来说|是很重要的人|想要给你|一个惊喜|#countdown 3|生日快乐");
+            S.UI.simulate("越宝宝|今天是|一个|特别的日子|12.06|对我来说|你是|特别|重要的人|这一生|想要给你|很多温暖|很多感动|但是现在|我要给你|一点惊喜|#countdown 5|生日快乐");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
@@ -295,11 +288,17 @@
                                 if (sequence.length === 0) {
                                     S.Shape.switchShape(S.ShapeBuilder.letter(''));
                                 } else {
-                                    let content = document.getElementById('text_note');
+                                    // let content = document.getElementById('text_note');
+                                    //
+                                    // content.innerHTML = "<div style='color:red'>我是三秒后显示的内容！</div> " +
+                                    //     "<br>" + " <span>1996-12-06</span>" + "<br>" + "<span>1996-12-06</span>";
+                                    // performAction(sequence);
+                                    //
 
-                                    content.innerHTML = "<div style='color:red'>我是三秒后显示的内容！</div> " +
-                                        "<br>" + " <span>1996-12-06</span>" + "<br>" + "<span>1996-12-06</span>";
-                                    performAction(sequence);
+                                    //方式2
+                                    var audio = new Audio("http://image.sunchen.cc/群星-Happy birthday.mp3");
+                                    audio.play();
+
                                 }
                             } else {
                                 S.Shape.switchShape(S.ShapeBuilder.letter(index), true);
